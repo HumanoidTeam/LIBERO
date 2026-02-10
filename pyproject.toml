@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "libero"
+version = "0.1.0"
+description = "LIBERO: Benchmarking Knowledge Transfer for Lifelong Robot Learning"
+requires-python = ">=3"
+authors = [
+    {name = "Bo Liu, Yifeng Zhu, Chongkai Gao, Yihao Feng, Qiang Liu, Yuke Zhu, Peter Stone", email = "bliu@cs.utexas.edu"},
+]
+
+[project.scripts]
+"lifelong.main" = "libero.lifelong.main:main"
+"lifelong.eval" = "libero.lifelong.evaluate:main"
+"libero.config_copy" = "scripts.config_copy:main"
+"libero.create_template" = "scripts.create_template:main"
+
+[tool.setuptools.packages.find]
+where = ["libero"]
+
+[tool.setuptools.packages]
+"libero" = "libero"
