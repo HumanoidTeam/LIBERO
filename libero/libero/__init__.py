@@ -59,8 +59,7 @@ def set_libero_default_path(custom_location=os.path.dirname(os.path.abspath(__fi
         yaml.dump(new_config, f)
 
 
-if not os.path.exists(libero_config_path):
-    os.makedirs(libero_config_path)
+os.makedirs(libero_config_path, exist_ok=True)
 
 if not os.path.exists(config_file):
     # Create a default config file
